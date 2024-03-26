@@ -86,6 +86,9 @@ createApp({
                 clearInterval(this.intervalId);
                 this.intervalId = null;
             }
+        },
+        mouseLeave(){
+            this.intervalId = setInterval(this.incrementIndex, 3000)
         }
     },
     mounted() {
