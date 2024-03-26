@@ -80,6 +80,9 @@ createApp({
         saveIndex(index){
             this.currentIndex = index
         }
+    },
+    mounted() {
+        setInterval(this.incrementIndex, 3000)
     }
 }).mount('#app')
 
