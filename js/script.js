@@ -31,6 +31,7 @@ createApp({
         return {
             message: 'Hello Vue!',
             currentIndex: 0,
+            intervalId: null,
             slides: [
                 {
                     image: 'img/01.webp',
@@ -71,7 +72,7 @@ createApp({
         },
         decrementIndex(){
             if(this.currentIndex === 0){
-                this.currentIndex = 4;
+                this.currentIndex = this.slides.length-1;
             }else{
                 this.currentIndex--    
             }
@@ -79,10 +80,16 @@ createApp({
         },
         saveIndex(index){
             this.currentIndex = index
+        },
+        mouseOver(){
+            if (this.intervalId !== null) {
+                clearInterval(this.intervalId);
+                this.intervalId = null;
+            }
         }
     },
     mounted() {
-        setInterval(this.incrementIndex, 3000)
+        this.intervalId = setInterval(this.incrementIndex, 3000)
     }
 }).mount('#app')
 

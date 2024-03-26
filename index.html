@@ -15,7 +15,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div @mouseover="mouseOver" class="slider-wrapper" tabindex="0">
 
                 <div v-for="(element, i) in slides">
                     <div class="item" v-if="i === currentIndex">
