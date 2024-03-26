@@ -77,8 +77,8 @@ createApp({
             }
             console.log(this.currentIndex)
         },
-        saveIndex(){
-            
+        saveIndex(index){
+            this.currentIndex = index
         }
     }
 }).mount('#app')
